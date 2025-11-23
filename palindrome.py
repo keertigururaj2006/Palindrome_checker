@@ -1,9 +1,12 @@
-string = input("Enter a string: ")
+import sys
 
-# Remove spaces and convert to lowercase for accurate checking
-s = string.replace(" ", "").lower()
+if len(sys.argv) != 2:
+    print("Usage: python palindrome.py <string>")
+    sys.exit(1)
 
-if s == s[::-1]:
-    print("It is a palindrome.")
+string = sys.argv[1]
+
+if string == string[::-1]:
+    print(f"{string} is a palindrome")
 else:
-    print("It is not a palindrome.")
+    print(f"{string} is not a palindrome")
